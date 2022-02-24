@@ -30,7 +30,14 @@ public class CharacterSphereController : MonoBehaviour, IPoolInit, IPoolOnSpawn,
         {
             netForce += (Vector3.right * moveSpeed * Time.deltaTime);
         }
-        
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("space");
+            netForce += (Vector3.up * 5f );
+        }
+
+
         if (Input.anyKey == false)
         {
             netForce = Vector3.zero;
